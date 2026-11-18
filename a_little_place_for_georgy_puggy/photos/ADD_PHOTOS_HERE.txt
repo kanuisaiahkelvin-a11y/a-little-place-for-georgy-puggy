@@ -1,0 +1,2 @@
+Add Junia's photos here. Suggested filenames: junia-01.jpg through junia-14.jpg.
+Update the matching photo paths in ../messages.js if you use different filenames.

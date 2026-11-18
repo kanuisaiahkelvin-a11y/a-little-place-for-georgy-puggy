@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#fff4f7">
+    <title>A Little Place for Georgy Puggy 😝❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --deep: #a94f6d;
+            --ink: #533c46;
+            --muted: #927782;
+            --paper: #fffdfb;
+            --line: #f2dce3;
+            --shadow: 0 18px 55px #97526c1f
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            background: radial-gradient(circle at 10% 12%, #ffbed063, transparent 24rem), radial-gradient(circle at 90% 30%, #ffe0e8a6, transparent 25rem), #fff9fa;
+            font-family: 'DM Sans', sans-serif
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer
+        }
+
+        .shell {
+            width: min(1080px, calc(100% - 32px));
+            margin: auto;
+            padding: 25px 0 55px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 32px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--deep);
+            letter-spacing: -.03em
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: #ffe5ec
+        }
+
+        .tiny {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .hero {
+            text-align: center;
+            margin: 32px auto 28px;
+            max-width: 700px
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--deep);
+            background: #fff0f4;
+            border: 1px solid #f7d9e2;
+            padding: 8px 13px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        h1 {
+            font: 600 clamp(36px, 7vw, 62px)/1.08 'Playfair Display', Georgia, serif;
+            letter-spacing: -.04em;
+            margin: 18px 0 10px;
+            color: #754457
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 290px;
+            gap: 24px;
+            align-items: start;
+            margin-top: 34px
+        }
+
+        .paper {
+            background: #fffdfbf2;
+            border: 1px solid #f4e1e6;
+            border-radius: 26px;
+            box-shadow: var(--shadow)
+        }
+
+        .note {
+            padding: clamp(18px, 4vw, 34px);
+            position: relative;
+            overflow: hidden
+        }
+
+        .note:before {
+            content: ' ';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 1px dashed #f1c9d5;
+            border-radius: 50%;
+            top: -88px;
+            right: -40px
+        }
+
+        .note-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 20px
+        }
+
+        .date-label {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .today-tag {
+            background: #ffedf2;
+            color: #a65370;
+            border-radius: 99px;
+            padding: 7px 11px;
+            font-size: 11px;
+            font-weight: 700
+        }
+
+        .photo-wrap {
+            width: min(100%, 350px);
+            margin: 0 auto 23px;
+            padding: 12px 12px 38px;
+            background: white;
+            box-shadow: 0 10px 26px #9c64731a;
+            transform: rotate(-1.2deg);
+            border: 1px solid #f1e6e8;
+            position: relative
+        }
+
+        .photo-wrap:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: calc(50% - 43px);
+            width: 86px;
+            height: 22px;
+            background: #f5cbd5b8;
+            transform: rotate(-3deg)
+        }
+
+        .photo {
+            width: 100%;
+            aspect-ratio: 4/4.5;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, #ffe4ec, #f8c8d6)
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 9px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font: 600 24px 'Caveat', cursive;
+            color: #9a6477
+        }
+
+        .message-title {
+            font: 600 28px/1.2 'Playfair Display', Georgia, serif;
+            text-align: center;
+            color: #815064;
+            margin: 0 0 12px
+        }
+
+        .message-body {
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #6e5962;
+            white-space: pre-line
+        }
+
+        .signature {
+            text-align: center;
+            font: 600 25px 'Caveat', cursive;
+            color: #b45e7b;
+            margin-top: 18px
+        }
+
+        .note-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 24px
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 99px;
+            padding: 11px 17px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .btn:disabled {
+            cursor: not-allowed
+        }
+
+        .btn-primary {
+            color: white;
+            background: linear-gradient(135deg, #d77e9b, #b75c7c);
+            box-shadow: 0 7px 16px #c46c8b35
+        }
+
+        .btn-soft {
+            color: #98546c;
+            background: #fff0f4;
+            border: 1px solid #f2d5de
+        }
+
+        aside {
+            padding: 21px
+        }
+
+        .side-title {
+            font: 600 21px 'Playfair Display', Georgia, serif;
+            margin: 0 0 6px;
+            color: #815064
+        }
+
+        .side-copy {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0 0 16px
+        }
+
+        .calendar-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #815064
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px
+        }
+
+        .day-name {
+            font-size: 10px;
+            color: #b08e9b;
+            text-align: center;
+            padding: 5px 0
+        }
+
+        .day {
+            border: 0;
+            aspect-ratio: 1;
+            border-radius: 10px;
+            color: #896b77;
+            background: #fff7f9;
+            font-size: 11px
+        }
+
+        .day.available {
+            background: #ffe7ee;
+            color: #9e4e6c;
+            font-weight: 700
+        }
+
+        .day.selected {
+            background: #bd6684;
+            color: white;
+            box-shadow: 0 4px 10px #bd668433
+        }
+
+        .day.locked {
+            opacity: .35;
+            cursor: not-allowed
+        }
+
+        .archive {
+            margin-top: 20px;
+            border-top: 1px solid var(--line);
+            padding-top: 17px
+        }
+
+        .archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            max-height: 260px;
+            overflow: auto;
+            padding-right: 3px
+        }
+
+        .archive-item {
+            border: 1px solid #f4e3e8;
+            background: #fffafb;
+            padding: 10px 11px;
+            border-radius: 12px;
+            text-align: left;
+            color: #775966;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: center
+        }
+
+        .archive-item:hover,
+        .archive-item.current {
+            background: #fff0f4;
+            border-color: #dfa2b5
+        }
+
+        .archive-item strong {
+            display: block;
+            font-size: 12px
+        }
+
+        .archive-item small {
+            display: block;
+            color: #aa8b97;
+            font-size: 10px;
+            margin-top: 3px
+        }
+
+        .empty {
+            font-size: 12px;
+            color: #aa8b97;
+            line-height: 1.6
+        }
+
+        footer {
+            text-align: center;
+            color: #b18f9c;
+            font-size: 11px;
+            margin-top: 32px;
+            line-height: 1.8
+        }
+
+        .heart {
+            color: #d77e9b
+        }
+
+        @media(max-width:800px) {
+            .content {
+                grid-template-columns: 1fr
+            }
+
+            header {
+                margin-bottom: 22px
+            }
+        }
+
+        @media(max-width:480px) {
+            .shell {
+                width: calc(100% - 22px);
+                padding-top: 18px
+            }
+
+            .brand span:last-child {
+                font-size: 13px
+            }
+
+            .hero {
+                margin-top: 25px
+            }
+
+            .note {
+                border-radius: 21px
+            }
+
+            .photo-wrap {
+                width: min(100%, 300px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <header>
+            <div class="brand"><span class="brand-mark">💌</span><span>A Little Place for Georgy Puggy</span></div>
+            <div class="tiny">made with love <span class="heart">♥</span></div>
+        </header>
+        <section class="hero"><span class="eyebrow">✿ a little corner of the internet, just for you</span>
+            <h1>Hey, Georgy Puggy. 😝❤️</h1>
+            <p>A little note, a little smile, and a reminder that someone is thinking about you today.</p>
+        </section>
+        <main class="content">
+            <section class="paper note" aria-live="polite">
+                <div class="note-top"><span class="date-label" id="noteDate"></span><span class="today-tag"
+                        id="todayTag">TODAY'S NOTE</span></div>
+                <div class="photo-wrap"><img class="photo" id="notePhoto"
+                        src="a_little_place_for_georgy_puggy/photos/WhatsApp Image 2026-11-18 at 03.52.35.jpeg"
+                        alt="A favourite picture of Junia">
+                    <div class="photo-caption">my favourite person ♡</div>
+                </div>
+                <h2 class="message-title" id="messageTitle"></h2>
+                <p class="message-body" id="messageBody"></p>
+                <div class="signature">With love, Kelvin ♡</div>
+                <div class="note-actions"><button class="btn btn-soft" id="previousBtn">← Previous note</button><button
+                        class="btn btn-primary" id="todayBtn">Today's note ♡</button><button class="btn btn-soft"
+                        id="nextBtn">Next note →</button></div>
+            </section>
+            <aside class="paper">
+                <h2 class="side-title">Our little diary</h2>
+                <p class="side-copy">Every day brings a new note. The older ones stay here, so you can read them
+                    whenever you want. ♡</p>
+                <div class="calendar-head"><span id="monthLabel"></span><span>♡</span></div>
+                <div class="calendar-grid" id="calendar"></div>
+                <div class="archive">
+                    <h3 class="side-title" style="font-size:18px">Little notes before today</h3>
+                    <div class="archive-list" id="archiveList"></div>
+                </div>
+            </aside>
+        </main>
+        <footer>Collected with care, one day at a time. <span class="heart">♥</span><br>© <span id="year"></span> • A
+            Little Place for Georgy Puggy</footer>
+    </div>
+    <script src="messages.js"></script>
+    <script>
+        const DAY = 86400000, start = new Date(LOVE_NOTES_START_DATE + 'T00:00:00'); let now = new Date(); now.setHours(0, 0, 0, 0); const count = Math.max(0, Math.min(LOVE_NOTES.length, Math.floor((now - start) / DAY) + 1)); let selected = count - 1, month = new Date(now.getFullYear(), now.getMonth(), 1); const $ = id => document.getElementById(id); const dateAt = i => new Date(start.getTime() + i * DAY); const fmt = d => d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+        function render(i) { if (count === 0) { $('noteDate').textContent = 'A little something is on its way'; $('messageTitle').textContent = 'Your first note is waiting ♡'; $('messageBody').textContent = 'Kelvin’s little collection starts on ' + fmt(start) + '. Come back then for your first note.'; $('notePhoto').style.display = 'none'; $('todayTag').textContent = 'COMING SOON'; return } selected = Math.max(0, Math.min(i, count - 1)); const n = LOVE_NOTES[selected]; $('noteDate').textContent = fmt(dateAt(selected)); $('todayTag').textContent = selected === count - 1 ? "TODAY'S NOTE" : 'A NOTE TO KEEP'; $('messageTitle').textContent = n.title; $('messageBody').textContent = n.message; $('notePhoto').style.display = 'block'; $('notePhoto').src = n.photo || 'photos/junia-01.jpg'; $('notePhoto').alt = n.photoAlt || 'A favourite picture of Junia'; $('notePhoto').onerror = function () { this.style.display = 'none'; }; $('previousBtn').disabled = selected === 0; $('nextBtn').disabled = selected === count - 1; $('previousBtn').style.opacity = selected === 0 ? '.4' : '1'; $('nextBtn').style.opacity = selected === count - 1 ? '.4' : '1'; archive(); calendar() }
+        function archive() { const el = $('archiveList'); el.innerHTML = ''; if (count <= 1) { el.innerHTML = '<div class="empty">Your first note is here. More little memories will appear day by day. ♡</div>'; return } for (let i = count - 2; i >= 0; i--) { const b = document.createElement('button'); b.className = 'archive-item' + (i === selected ? ' current' : ''); const d = dateAt(i); b.innerHTML = '<span><strong></strong><small></small></span><span>♡</span>'; b.querySelector('strong').textContent = LOVE_NOTES[i].title; b.querySelector('small').textContent = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }); b.onclick = () => render(i); el.appendChild(b) } }
+        function calendar() { const el = $('calendar'); el.innerHTML = ''; $('monthLabel').textContent = month.toLocaleDateString(undefined, { month: 'long', year: 'numeric' }); 'SMTWTFS'.split('').forEach(x => { const d = document.createElement('div'); d.className = 'day-name'; d.textContent = x; el.appendChild(d) }); const offset = month.getDay(), days = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate(); for (let j = 0; j < offset; j++)el.appendChild(document.createElement('div')); for (let day = 1; day <= days; day++) { const d = new Date(month.getFullYear(), month.getMonth(), day), idx = Math.floor((d - start) / DAY), b = document.createElement('button'); b.className = 'day'; b.textContent = day; if (idx >= 0 && idx < count) { b.classList.add('available'); if (idx === selected) b.classList.add('selected'); b.onclick = () => render(idx) } else { b.classList.add('locked'); b.disabled = true } el.appendChild(b) } }
+        $('previousBtn').onclick = () => render(selected - 1); $('nextBtn').onclick = () => render(selected + 1); $('todayBtn').onclick = () => render(count - 1); $('year').textContent = now.getFullYear(); render(selected);
+    </script>
+</body>
+
+</html>
